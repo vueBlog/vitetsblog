@@ -3,9 +3,12 @@
     <el-header v-if="layoutShow" class="header-box">
       <page-header></page-header>
     </el-header>
-    <el-aside></el-aside>
-    <el-main>
+    <el-main class="layout-box">
+      <router-view></router-view>
     </el-main>
+    <el-footer v-if="layoutShow" class="layout-footer" height="120px">
+      <page-footer></page-footer>
+    </el-footer>
   </el-container>
 </template>
 
@@ -52,6 +55,7 @@ router.afterEach((to, from) => {
   }
   .layout-box {
     padding: 20px 0;
+    min-height: calc(100vh - 220px);
   }
   .layout-footer {
     padding: 0;

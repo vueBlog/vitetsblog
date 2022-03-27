@@ -3,7 +3,7 @@ import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import asideStore from './asideStore'
 import { stateModel, allStateModel } from './types'
 
-export const key: InjectionKey<Store<stateModel>> = Symbol()
+export const storeKey: InjectionKey<Store<stateModel>> = Symbol()
 
 export const store = createStore({
   state() {
@@ -21,5 +21,5 @@ export const store = createStore({
 });
 
 export function useStore<T = allStateModel>() {
-  return baseUseStore<T>(key)
+  return baseUseStore<T>(storeKey)
 }

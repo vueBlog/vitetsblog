@@ -4,16 +4,30 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AsideCard: typeof import('./src/components/AsideCard.vue')['default']
+    AsideCardSkeleton: typeof import('./src/components/AsideCardSkeleton.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElOption: typeof import('element-plus/es')['ElOption']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
+    ElTag: typeof import('element-plus/es')['ElTag']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    ListArticle: typeof import('./src/components/listArticle.vue')['default']
+    ListArticleSkeleton: typeof import('./src/components/ListArticleSkeleton.vue')['default']
+    PageFooter: typeof import('./src/components/pageFooter.vue')['default']
     PageHeader: typeof import('./src/components/PageHeader.vue')['default']
+    SkeletonCircle: typeof import('./src/components/skeleton/SkeletonCircle.vue')['default']
+    SkeletonRect: typeof import('./src/components/skeleton/SkeletonRect.vue')['default']
   }
 }
 

@@ -1,3 +1,6 @@
 export * from './search'
 export * from './menu'
 export * from './aside'
+export * from './friendLink'
+export * from './page'
+export * from './article'

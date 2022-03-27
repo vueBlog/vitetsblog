@@ -1,4 +1,4 @@
-interface asideItemInfoItemModel {
+export interface asideItemInfoItemModel {
   id: number
   num: number
   title: string

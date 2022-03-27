@@ -18,6 +18,7 @@ interface ImportMetaEnv {
   readonly VITE_description: string;
   readonly VITE_friendLink: string;
   readonly VITE_author: string;
+  readonly VITE_record: string;
   readonly VITE_record_link: string;
   readonly VITE_qiniu_domain: string;
   readonly VITE_img_domain: string;

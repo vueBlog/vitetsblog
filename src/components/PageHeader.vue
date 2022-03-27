@@ -47,7 +47,7 @@ import { Search } from '@element-plus/icons-vue'
 import { ref, computed } from 'vue'
 import { useStore } from './../store'
 import { useRouter, useRoute } from 'vue-router'
-import { apiSearch } from '../service/basic'
+import { apiSearch } from '../service'
 import { searchItemModel, menuItemModel } from './../types'
 
 const router = useRouter()

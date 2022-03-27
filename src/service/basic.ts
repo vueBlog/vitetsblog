@@ -1,5 +1,5 @@
-import axios from './index.js'
-import { searchModel, searchItemModel } from './../types'
+import axios from './http'
+import { searchReqModel, searchItemModel } from './../types'
 
 interface apiSearchResModel {
   data: {
@@ -9,6 +9,6 @@ interface apiSearchResModel {
   msg: string
 }
 
-export function apiSearch(paramsData: searchModel): Promise<apiSearchResModel> {
+export function apiSearch(paramsData: searchReqModel): Promise<apiSearchResModel> {
   return axios.post('/search', paramsData)
 }

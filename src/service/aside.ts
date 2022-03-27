@@ -1,4 +1,4 @@
-import axios from './index.js'
+import axios from './http'
 import { asideItemModel, asideAuthorItemModel } from './../types'
 
 interface apigetAsideResModel {
@@ -9,10 +9,8 @@ interface apigetAsideResModel {
   msg: string
 }
 
-export function apigetAside(paramsData = {}): Promise<apigetAsideResModel> {
-  return axios.get('/aside', {
-    params: paramsData
-  })
+export function apigetAside(): Promise<apigetAsideResModel> {
+  return axios.get('/aside')
 }
 
 interface apigetAsideAuthorResModel {
@@ -21,8 +19,6 @@ interface apigetAsideAuthorResModel {
   msg: string
 }
 
-export function apigetAsideAuthor(paramsData = {}): Promise<apigetAsideAuthorResModel> {
-  return axios.get('/aside/author', {
-    params: paramsData
-  })
+export function apigetAsideAuthor(): Promise<apigetAsideAuthorResModel> {
+  return axios.get('/aside/author')
 }
