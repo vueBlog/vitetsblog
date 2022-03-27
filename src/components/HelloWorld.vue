@@ -4,8 +4,8 @@ import * as NProgress from 'nprogress'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
-function countEvent() {
+const count = ref<number>(0)
+function countEvent(): void {
   count.value++
   NProgress.start()
   setTimeout(() => {

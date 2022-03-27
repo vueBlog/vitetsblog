@@ -1,25 +1,14 @@
 import axios from './index.js'
-import { AxiosResponse, ResponseType } from 'axios'
+import { searchModel, searchItemModel } from './../types'
 
-interface searchModel {
-  queryString: string;
+interface apiSearchResModel {
+  data: {
+    searchList: searchItemModel[]
+  }
+  isok: boolean
+  msg: string
 }
 
-export interface searchItemModel {
-  articleId: number;
-  articleTitle: string;
-  type: number;
-  h0?: string;
-  h1?: string;
-  h2?: string;
-  h3?: string;
-  h4?: string;
-  h5?: string;
-  h6?: string;
-  h7?: string;
-  [propName: string]: any;
-}
-
-export function apiSearch(paramsData: searchModel): Promise<AxiosResponse<searchItemModel>> {
+export function apiSearch(paramsData: searchModel): Promise<apiSearchResModel> {
   return axios.post('/search', paramsData)
 }

@@ -45,26 +45,26 @@
 import headerLogo from '@/assets/img/headerLogo.jpg'
 import { Search } from '@element-plus/icons-vue'
 import { ref, computed } from 'vue'
-import { useStore } from 'vuex'
+import { useStore } from './../store'
 import { useRouter, useRoute } from 'vue-router'
+import { apiSearch } from '../service/basic'
+import { searchItemModel, menuItemModel } from './../types'
 
 const router = useRouter()
 const route = useRoute()
 const store = useStore()
-const logoText = store.state.logoText
+const logoText: string = store.state.logoText
 
 // 搜索
-import { apiSearch, searchItemModel } from '../service/basic'
 const searchValue = ref<string>('')
-async function querySearchAsync(queryString: string, cb: any) {
+async function querySearchAsync(queryString: string, cb: Function) {
   if (!queryString.length) return
   const result = await apiSearch({
     queryString
   })
   cb(result?.data?.searchList || [])
 }
-function searchHandleSelect(key: searchItemModel) {
-  console.log(key)
+function searchHandleSelect(key: searchItemModel): void {
   if ([0, 7].includes(key.type)) {
     window.open(`${import.meta.env.VITE_detailPath}/detail/${key.articleId}`)
   } else if ([1, 2, 3, 4, 5, 6].includes(key.type)) {
@@ -74,8 +74,8 @@ function searchHandleSelect(key: searchItemModel) {
     )
   }
 }
-function getSearchName(type: number) {
-  let res
+function getSearchName(type: number): string {
+  let res: string = ''
   switch (type) {
     case 0:
       res = '文章标题'
@@ -108,7 +108,7 @@ function getSearchName(type: number) {
 }
 
 // 菜单
-const menuObj = [
+const menuObj: menuItemModel[] = [
   {
     index: '1',
     route: '/',
@@ -125,8 +125,9 @@ const menuObj = [
     title: '关于'
   }
 ]
-const activeIndex = computed(() => {
-  let res
+
+const activeIndex = computed((): string => {
+  let res: string = ''
   switch (route.name) {
     case 'home':
       res = '1'

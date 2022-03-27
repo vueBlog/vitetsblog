@@ -3,6 +3,9 @@
     <el-header v-if="layoutShow" class="header-box">
       <page-header></page-header>
     </el-header>
+    <el-aside></el-aside>
+    <el-main>
+    </el-main>
   </el-container>
 </template>
 
@@ -11,7 +14,6 @@ import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useTitle } from '@vueuse/core'
 import useNProgress from './plugin/useNProgress'
-import PageHeader from './components/PageHeader.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -19,7 +21,7 @@ const route = useRoute()
 useTitle(import.meta.env.VITE_title)
 
 // 是否显示头部底部，在编辑页面不显示
-const layoutShow = computed(() => !/\/editor\/?\d*/.test(route.path))
+const layoutShow = computed((): boolean => !/\/editor\/?\d*/.test(route.path))
 
 // 头部加载条
 const { isLoading } = useNProgress()

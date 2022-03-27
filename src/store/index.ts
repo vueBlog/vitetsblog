@@ -1,13 +1,9 @@
-import { InjectionKey } from "vue";
-import { createStore, useStore as baseUseStore, Store } from "vuex";
-import asideStore from "./asideStore";
+import { InjectionKey } from 'vue'
+import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import asideStore from './asideStore'
+import { stateModel, allStateModel } from './types'
 
-export interface State {
-  logoText: string,
-  logoDescription: string
-}
-
-export const key: InjectionKey<Store<State>> = Symbol()
+export const key: InjectionKey<Store<stateModel>> = Symbol()
 
 export const store = createStore({
   state() {
@@ -24,6 +20,6 @@ export const store = createStore({
   },
 });
 
-export function useStore() {
-  return baseUseStore(key)
+export function useStore<T = allStateModel>() {
+  return baseUseStore<T>(key)
 }

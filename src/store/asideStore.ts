@@ -1,4 +1,7 @@
+import { Module } from 'vuex'
 import { apigetAside, apigetAsideAuthor } from './../service/aside'
+import { stateModel, asideStateModel } from './types'
+import { asideItemModel, asideAuthorItemModel } from './../types'
 
 export default {
   namespaced: true,
@@ -7,15 +10,15 @@ export default {
     asideAuthor: []
   },
   getters: {
-    getFirstAuthor(state) {
+    getFirstAuthor(state: asideStateModel) {
       return state.asideAuthor.length && state.asideAuthor[0].authorId
     }
   },
   mutations: {
-    setAside(state, value) {
+    setAside(state: asideStateModel, value: asideItemModel[]) {
       state.aside = value
     },
-    setAsideAuthor(state, value) {
+    setAsideAuthor(state: asideStateModel, value: asideAuthorItemModel[]) {
       state.asideAuthor = value
     }
   },
@@ -33,4 +36,4 @@ export default {
       }
     }
   }
-}
+} as Module<asideStateModel, stateModel>
