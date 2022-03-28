@@ -1,4 +1,4 @@
-import { Module } from 'vuex'
+import { Module, GetterTree } from 'vuex'
 import { apigetAside, apigetAsideAuthor } from './../service/aside'
 import { stateModel, asideStateModel } from './types'
 import { asideItemModel, asideAuthorItemModel } from './../types'
@@ -8,11 +8,6 @@ export default {
   state: {
     aside: [],
     asideAuthor: []
-  },
-  getters: {
-    getFirstAuthor(state: asideStateModel) {
-      return state.asideAuthor.length && state.asideAuthor[0].authorId
-    }
   },
   mutations: {
     setAside(state: asideStateModel, value: asideItemModel[]) {

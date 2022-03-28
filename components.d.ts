@@ -4,13 +4,18 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AsideAuthor: typeof import('./src/components/AsideAuthor.vue')['default']
+    AsideAuthorSkeleton: typeof import('./src/components/AsideAuthorSkeleton.vue')['default']
     AsideCard: typeof import('./src/components/AsideCard.vue')['default']
     AsideCardSkeleton: typeof import('./src/components/AsideCardSkeleton.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
+    ElCollapse: typeof import('element-plus/es')['ElCollapse']
+    ElCollapseItem: typeof import('element-plus/es')['ElCollapseItem']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']

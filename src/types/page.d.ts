@@ -4,3 +4,7 @@ export interface pageAsideModel {
   loading: boolean
   list: asideItemModel[]
 }
+export interface pageAsideAuthorModel {
+  loading: boolean
+  list: asideAuthorItemModel[]
+}
