@@ -192,12 +192,16 @@ async function apiColumnDetailMethod() {
     Object.assign(columnInfo, result.data)
   }
 }
-apiColumnDetailMethod()
+if (route.query.columnId) {
+  apiColumnDetailMethod()
+}
 watch(
   route,
   () => {
     columnInfo.columnTitle = ''
-    apiColumnDetailMethod()
+    if (route.query.columnId) {
+      apiColumnDetailMethod()
+    }
   },
   {
     deep: true
