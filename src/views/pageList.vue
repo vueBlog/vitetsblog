@@ -196,6 +196,7 @@ apiColumnDetailMethod()
 watch(
   route,
   () => {
+    columnInfo.columnTitle = ''
     apiColumnDetailMethod()
   },
   {
