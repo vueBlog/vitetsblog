@@ -73,6 +73,7 @@
           :page-size="list.limit"
           :current-page="list.page"
           @current-change="handleCurrentChange"
+          class="pagination-center"
         ></el-pagination>
       </div>
     </el-main>
